@@ -1,0 +1,47 @@
+<!-- 구조 태그 -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <div>
+    <!-- div(Division) : 블록(상자)요소
+    특별한 의미가 없는 구분을 위한 요소 (레이아웃을 구분하는 용도) -->
+        <h1>오늘의 날씨</h1>
+        <!-- h(Heading) : 제목을 의미하는 블록 요소 
+        숫자가 작을수록 더 중요한 제목을 정의 -->
+
+        <p>중부 집중호우, 남부는 열대야, 12호 태풍 북상 중...</p>
+        <!-- p(Paragragh) : 문장을 의미하는 블록 요소 -->
+        <span>동해물</span>과 백두산이<br/>마르고 닳도록
+        <!-- span : 특별한 의미가 없는 구분을 위한 인라인(글자)요소 (텍스트의 특정한 부분을 구분할 때)
+        br(Break) : 줄바꿈 인라인 요소-->
+        <img src="img/weather.jpg" alt="12호 태풍" />
+        <!-- img(Image) : 이미지를 삽입하는 인라인(글자) 요소
+        src : 삽입할 이미지의 경로 / alt : 삽입할 이미지의 이름 (이미지x시 대체텍스트) -->
+    </div>
+
+    <ul>
+        <!-- ul(Unordered List) : 순서가 필요없는 목록의 집합을 의미 -->
+        <li>사과</li>
+        <li>딸기</li>
+        <li>수박</li>
+        <!-- li(List Item) : 목록 내 각 항목 -->
+    </ul>
+
+    <a href="https://www.naver.com">NAVER</a>
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <!-- a(Anchor) : 다른/같은 페이지로 이동하는 하이퍼링크를 지정하는 인라인(글자)요소
+    href : 링크URL / target : 링크 URL의 표시(브라우저 탭) 위치 (_blank 새탭으로 열기) -->
+    
+    <input type="text" value="HEROPY!" />
+    <!-- input : 사용자가 데이터를 입력하는 요소
+    type : 입력받을 데이터의 타입
+    value : 미리 입력된 값(데이터) -->
+    <input type="text" placeholder="이름을 입력하세요!" />
+    <!-- placeholder : 사용자가 입력할 값(데이터)의 힌트 -->
+    <input type="text" disabled />
+    <!-- disabled : 입력 요소 비활성화 -->
+    
+</body>
+</html>
