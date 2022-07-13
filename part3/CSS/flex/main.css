@@ -1,0 +1,17 @@
+.container {
+    background-color: orange;
+    display: flex;
+    /* 자식요소 수평 정렬 */
+    justify-content: center;
+    /* 정렬의 가운데 이동 (기본값-flex-start) */
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    border: 2px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
