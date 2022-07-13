@@ -1,0 +1,15 @@
+.container .item {
+    color: yellowgreen;
+    border: 2px solid black;
+    line-height: 2;
+    /* 줄의 높이 */
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    /* 정렬 */
+}
+.container .item:nth-child(2) {
+    font-weight: bold;
+    /* 굵게 */
+    text-decoration: underline;
+}
