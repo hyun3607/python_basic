@@ -1,0 +1,25 @@
+.container {
+
+}
+.container .item {
+    /* container클래스의 후손인(띄어쓰기)item클래스 */
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    /* 외부여백-아래 */
+    padding: 20px;
+    /* 내부여백 */
+    background-color: mediumpurple;
+    border: 4px solid blue;
+    /* 테두리선 solid:실선, dashed:점선 dotted:점선 */
+    box-sizing: border-box;
+    /* 지정한 요소 크기를 유지 */
+}
+.container .item:nth-child(2) {
+    box-shadow: 10px 20px 10px rgba(0,0,0,.3);
+    /* 그림자: x축 y축 흐림처리 투명도 */
+}
+.container .item:nth-child(3) {
+    opacity: 0.5;
+    /* 요소의 투명도 */
+}
