@@ -1,0 +1,26 @@
+.container {
+    width: 400px;
+    height: 250px;
+    margin: 50px;
+    padding: 20px;
+    background-color: orange;
+    box-sizing: border-box;
+    position: relative;
+    /* 배치 기준 지정 */
+}
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+}
+.container .item:nth-child(1) {
+    position: absolute;
+    /* 부모요소 기준으로 배치 */
+    left: 40px;
+    bottom: 100px;
+}
+.container .item:nth-child(2) {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+}
