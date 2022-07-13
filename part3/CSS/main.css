@@ -1,0 +1,42 @@
+/* div:focus {
+    color: red;
+}
+input:focus {
+    background-color: orange
+} */
+
+div::after {
+    content: "123";
+    color: red;
+    font-size: 20px;
+}
+
+/* 
+선택자 - 기본 (div 선택자 { 속성: 값; })
+* : 모든 요소를 선택
+ABC : 태그 이름이 ABC인 요소 선택 (ex.li)
+.ABC : HTML class 속성의 값이 ABC인 요소 선택
+#ABC L HTML id 속성의 값이 ABC인 요소 선택
+ 
+선택자 - 복합
+ABCXYZ : 선택자 ABC와 XYZ를 동시에 만족하는 요소 선택
+ex) span.orange : span 태그에 class속성값이 orange인 요소 선택
+ABC > XYZ : 선택자 ABC 자식요소 XYZ 선택
+ABC XYZ : 선택자 ABC의 하위(후손) 요소 XYZ 선택 ('띄어쓰기'가 선택자의 기호)
+ABC + XYZ : 선택자 ABC의 '다음' 형제 요소 XYZ '하나'를 선택
+ABC ~ XYZ : 선택자 ABC의 다음 형제 요소 XYZ 모두를 선택
+
+선택자 - 가상클래스
+ABC:hover : 선택자 ABC 요소에 '마우스 커서가 올라가 있는 동안' 선택
+ABC:active : 선택자 ABC 요소에 '마우스를 클릭하고 있는 동안' 선택
+ABC:focus : 선택자 ABC 요소가 포커스되면 선택
+ABC:nth-child(n) : 선택자 ABC가 형제 요소 중 (n)째라면 선택
+
+선택자 - 가상요소
+ABC::before : 선택자 ABC 요소의 내부 앞에 내용을 삽입
+ABC::after : 선택자 ABC 요소의 내부 뒤에 내용을 삽입
+
+선택자 - 속성
+[ABC] : 속성 ABC을 포함한 요소 선택
+[ABC="XYZ"] : 속성 ABC을 포함하고 값이 XYZ인 요소 선택
+*/
