@@ -1,0 +1,24 @@
+.container .item {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    /* 모서리 둥글게 */
+    transition: 1s;
+    /* 전환효과 처리 시간 (전환효과 : 전상태와 후상태를 자연스럽게 */
+}
+.container .item:nth-child(1):hover {
+    width: 200px;
+    background-color: orange;
+}
+.container .item:nth-child(2) {
+    transform: rotate(45deg) scale(0.5);
+    /* 변환효과 / rotate(각도):회전 scale:크기 */
+}
+.container .item:nth-child(3) {
+    transform: perspective(300) rotateX(45deg);
+    /* perspective(원근거리): 원근법 변환함수(다른 변환함수보다 먼저 작성)
+    rotateX: x축 기준으로 3차원 변환 */
+}
