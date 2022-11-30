@@ -9,7 +9,13 @@ topics = [
     {'id':3, 'title': 'javascript', 'body': 'javascript is ...'}
 ]
 
-def template(contents, content):
+def template(contents, content, id=None):
+    contextUI = ''
+    if id != None:
+        contextUI = f'''
+            <li><a href="/update/{id}/">update</a></li>
+            <li><form action="/delete/{id}/" method="POST"><input type="submit" value="delete"></form></li>
+        '''
     return f'''<!doctype html>
     <html>
         <body>
@@ -20,6 +26,7 @@ def template(contents, content):
             {content}
             <ul>
                 <li><a href="/create/">create</a></li>
+                {contextUI}
             </ul>
         </body>
     </html>
@@ -68,6 +75,47 @@ def read(id):
             title = topic['title']
             body = topic['body']
             break
-    return template(getContents(), f'<h2>{title}</h2>{body}')
+    return template(getContents(), f'<h2>{title}</h2>{body}', id)
+
+
+@app.route('/update/<int:id>/', methods=['GET', 'POST'])
+def update(id):
+    if request.method == 'GET':
+        title = ''
+        body = ''
+        for topic in topics:
+            if id  == topic['id']:
+                title = topic['title']
+                body = topic['body']
+                break
+
+        content = f'''
+            <form action="/update/{id}/" method="POST">
+                <p><input type="text" name="title" placeholder="title" value="{title}"></p>
+                <p><textarea name="body" placeholder="body">{body}</textarea></p>
+                <p><input type="submit" value="update"></p>
+            </form>
+        '''
+        return template(getContents(), content)
+
+    elif request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        for topic in topics:
+            if id == topic['id']:
+                topic['title'] = title
+                topic['body'] = body
+                break
+        url = '/read/'+str(id)+'/'
+        return redirect(url)
+
+
+@app.route('/delete/<int:id>/', methods=['POST'])
+def delete(id):
+    for topic in topics:
+        if id == topic['id']:
+            topics.remove(topic)
+            break
+    return redirect('/')
 
 app.run(debug=True)
